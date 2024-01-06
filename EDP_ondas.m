@@ -15,7 +15,7 @@ end
 N = 50;
 
 x_valores = linspace(0, 6, 100);
-t_valores = linspace(0, 8, 25);
+t_valores = linspace(0, 8, 35);
 
 % Precalcular todos los valores de u(x, ti)
 u_valores = zeros(length(x_valores), length(t_valores));
