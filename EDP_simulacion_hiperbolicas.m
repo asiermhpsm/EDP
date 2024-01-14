@@ -20,7 +20,7 @@ disp(flipud(errors'));
 fprintf('Error medio cometido:'); 
 disp(error_medio);
 
-%Representación
+%Apartado f
 representa(u_aprox, x_valores, t_valores);
 
 %--------------------------------------------------------------------------
@@ -35,7 +35,7 @@ g = @(x) x*0;
 fprintf('Valores aproximados de u:\n'); 
 disp(flipud(u_aprox'));
 
-%Representación
+%Apartado d
 representa(u_aprox, x_valores, t_valores);
 
 
@@ -81,11 +81,12 @@ function [res, error_medio] = errores(u, u_aprox, x_valores, t_valores)
 end
 
 function representa(u_aprox, x_valores, t_valores)
+    figure;
     h = plot(x_valores, u_aprox(:, 1));
     axis([0, x_valores(end), min(min(u_aprox)), max(max(u_aprox))]);
     title(['t=', num2str(t_valores(1))]);
 
-    %Se va a animar 3 veces
+    %Se va reproducir 3 veces
     for cont=1:3
         for i = 1:length(t_valores)
             set(h, 'XData', x_valores, 'YData', u_aprox(:, i));
@@ -93,7 +94,7 @@ function representa(u_aprox, x_valores, t_valores)
             if i == 1
                 pause(1.5);
             else
-                pause(0.05);
+                pause(0.1);
             end
         end
     end
