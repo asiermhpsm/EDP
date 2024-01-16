@@ -100,7 +100,16 @@ function representa(u_aprox, x_valores, t_valores)
     end
 end
 
-
+% Representa la gráfica en 3D
+function representa3D(x,y,z)
+    figure;
+    [X,Y] = meshgrid(x,y);
+    surf(X,Y,z');
+    xlabel('x');
+    ylabel('t');
+    zlabel('u(x,y)');
+    hold off;
+end
 
 
 
